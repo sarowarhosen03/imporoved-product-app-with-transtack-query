@@ -13,7 +13,7 @@ const ProductDetails = ({ id }) => {
   const { data: product, error, isLoading } = useQuery({
     queryKey: ["products", id],
     queryFn: retrieveProduct,
-    enabled: id !== null
+    enabled: id !== null //skip at first render
   });
   if (id === null) return;
   if (isLoading) return <div>Fetching Product Details...</div>
